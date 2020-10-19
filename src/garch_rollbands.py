@@ -1,32 +1,31 @@
-'''
-Author: Gabriel Contarini
-
-This is a GARCH rolling window band forecast indicator 
-implemention for backtrader. It was implementated using
-a arch library for the GARCH estimation.
-
-Args:
-    period: int number of data points used in each window.
-    p_arch: int p parameter from GARCH model.
-    q_arch: int autoregressive lags parameter.
-
-Returns:
-    A positive and a negative band around close price.
-
-To do:
-    Implement plot functions.
-    Implement params to control how many
-    standards deviations the bands must have.
-    Other models besides vanilla garch.
-    Scale factor as a param.
-'''
-
 from arch import arch_model
 import backtrader as bt
 import pandas as pd
 import numpy as np
 
 class GARCH_rollingbands(bt.Indicator):
+    '''
+    Author: Gabriel Contarini
+    
+    This is a GARCH rolling window band forecast indicator 
+    implemention for backtrader. It was implementated using
+    a arch library for the GARCH estimation.
+    
+    Args:
+        period: int number of data points used in each window.
+        p_arch: int p parameter from GARCH model.
+        q_arch: int autoregressive lags parameter.
+    
+    Returns:
+        A positive and a negative band around close price.
+    
+    To do:
+        Implement plot functions.
+        Other models besides vanilla garch.
+        Scale factor as a param.
+    '''
+
+
     params = (
     	('period', 30),
     	('p_arch', 1),
