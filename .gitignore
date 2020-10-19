@@ -1,5 +1,8 @@
+# Folders
 .ipynb_checkpoints/
 __pycache__/
+
+# Files
 quant.sublime-project
 quant.sublime-workspace
 src/credentials
