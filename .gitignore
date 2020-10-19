@@ -1,2 +1,5 @@
 .ipynb_checkpoints/
-
+__pycache__/
+quant.sublime-project
+quant.sublime-workspace
+src/credentials
