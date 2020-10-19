@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from garch_strategy4 import GARCH_strategybands
 from print_ta import print_ta
 import matplotlib.pyplot as plt
+import os
 
 # Main function
 if __name__ == '__main__':
@@ -14,10 +15,13 @@ if __name__ == '__main__':
 	# Add strategy
 	cerebro.addstrategy(GARCH_strategybands)
 
-	df = pd.read_csv('bitcoin.csv')
+	# Open data from CSV file
+	datapath = os.path.abspath(os.pardir) + '/data/'
+	df = pd.read_csv(datapath + 'bitcoin.csv')
 	# Clean data
 	df = df[['time', 'open', 'high', 'low', 'close', 'volume']]
 	df.columns = ['Date', 'Open', 'High', 'Low', 'Close', 'Volume']
+	df['Date'] = pd.to_datetime(df['Date'])
 	df.set_index('Date', inplace=True)
 	# Create datafeed object
 	data = bt.feeds.PandasData(dataname=df)
