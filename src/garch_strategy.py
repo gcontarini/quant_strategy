@@ -1,6 +1,6 @@
 import backtrader as bt
 import itertools
-from garch_rollbands import GARCH_rollingbands
+from garch_rollwindow import GARCH_rollingbands
 
 class GARCH_strategybands(bt.Strategy):
 	'''Multitrade strategy implementation using garch 

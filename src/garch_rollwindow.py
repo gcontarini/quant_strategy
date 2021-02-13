@@ -9,7 +9,7 @@ class GARCH_rollingbands(bt.Indicator):
     
     This is a GARCH rolling window band forecast indicator 
     implemention for backtrader. It was implementated using
-    a arch library for the GARCH estimation.
+    an arch library for the GARCH estimation.
     
     Args:
         period: int number of data points used in each window.
