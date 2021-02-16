@@ -2,7 +2,7 @@ import backtrader as bt
 import pandas as pd
 import psycopg2
 from sqlalchemy import create_engine
-from garch_strategy4 import GARCH_strategybands
+from garch_strategy import GARCH_strategybands
 import matplotlib.pyplot as plt
 import os
 
@@ -63,7 +63,7 @@ if __name__ == '__main__':
         if open_data_mode == 0:
                 df = data_csv('../data/bitcoin.csv')
         elif open_data_mode == 1:
-                df = data_db('btcusdt')
+                df = data_db('bitcoin.csv')
         
         # Clean data
         df = df[['time', 'open', 'high', 'low', 'close', 'volume']]
